@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalkulator Zakat</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <form name="form1">
+                    <table cellpadding="10px" width="100%" border="0" class="table table-bordered table-condensed table-hover table-striped">
+                        <tbody><tr>
+                            <td>Penghasilan/Gaji Saya per Bulan</td>
+                            <td width="150px" align="right"><input type="text" onchange="formated('gaji_saya');" value="0" class="gaji_saya" id="gaji_saya" name="gaji_saya"></td>
+                        </tr>
+                        <tr>
+                            <td>Penghasilan Lain-lain Saya per Bulan</td>
+                            <td align="right"><input type="text" onchange="formated('penghasilan_lain');" value="0" class="penghasilan_lain" name="penghasilan_lain"></td>
+                        </tr>
+                        <tr>
+                            <td>Hutang/Cicilan Saya untuk Kebutuhan Pokok 1)</td>
+                            <td align="right"><input type="text" onchange="formated('hutang');" value="0" class="hutang" name="hutang"></td>
+                        </tr>
+                        <tr>
+                            <td align="right" class="right"><strong>Jumlah Penghasilan per Bulan</strong></td>
+                            <td align="right"><input type="text" disabled="disabled" value="0" class="penghasilan_per_bulan" name="penghasilan_per_bulan"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table cellpadding="10px" width="100%" border="0" class="table table-bordered table-condensed table-hover table-striped">
+                        <tbody><tr>
+                            <td>Harga beras saat ini (per kg)</td>
+                            <td width="150px"><input type="text" onchange="formated('harga_beras');" class="harga_beras" name="harga_beras" value="6500"></td>
+                        </tr>
+                        <tr>
+                            <td align="right" class="right"><strong>Besarnya Nishab Zakat Penghasilan per Bulan</strong></td>
+                            <td><input type="text" disabled="disabled" class="besar_nishab" name="besar_nishab"></td>
+                        </tr>
+                        <tr>
+                            <td align="right" class="right"><strong>Apakah Saya Wajib Membayar Zakat Penghasilan?</strong></td>
+                            <td><input type="text" disabled="disabled" class="wajib_zakat" name="wajib_zakat"></td>
+                        </tr>
+                        <tr>
+                            <td align="right" class="right"><strong>Jumlah yang Saya Harus Dibayarkan per Bulan</strong></td>
+                            <td><input type="text" disabled="disabled" class="jumlah_wajib_zakat" name="jumlah_wajib_zakat"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    
+                    <table cellpadding="10px" width="100%" border="0" class="table table-bordered table-condensed table-hover table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Harta dalam bentuk Tabungan/ Giro/ Deposito</td>
+                                <td width="150px" align="right"><input type="text" onchange="formated('harta_deposito');" class="harta_deposito sum_maal" name="harta_deposito" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Logam Mulia (Emas/ Perak)</td>
+                                <td align="right"><input type="text" onchange="formated('harta_emas');" class="harta_emas sum_maal" name="harta_emas" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Surat Beharga 2)</td>
+                                <td align="right"><input type="text" onchange="formated('harta_surat');" class="harta_surat sum_maal" name="harta_surat" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Properti 3)</td>
+                                <td align="right"><input type="text" onchange="formated('harta_properti');" class="harta_properti sum_maal" name="harta_properti" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Kendaraan 4)</td>
+                                <td align="right"><input type="text" onchange="formated('harta_kendaraan');" class="harta_kendaraan sum_maal" name="harta_kendaraan" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Koleksi Seni &amp; Barang Antik 5)</td>
+                                <td align="right"><input type="text" onchange="formated('harta_antik');" class="harta_antik sum_maal" name="harta_antik" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Stok Barang Dagangan</td>
+                                <td align="right"><input type="text" onchange="formated('harta_dagangan');" class="harta_dagangan sum_maal" name="harta_dagangan" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Lainnya</td>
+                                <td align="right"><input type="text" onchange="formated('harta_lainnya');" class="harta_lainnya sum_maal" name="harta_lainnya" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Harta dalam bentuk Piutang Lancar</td>
+                                <td align="right"><input type="text" onchange="formated('harta_piutang');" class="harta_piutang sum_maal" name="harta_piutang" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="right"><strong>Jumlah Harta</strong></td>
+                                <td align="right"><input type="text" disabled="disabled" class="jumlah_harta" name="jumlah_harta" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Hutang Jatuh Tempo Saat Membayar Kewajiban Zakat </td>
+                                <td align="right"><input type="text" onchange="formated('hutang_tempo');" class="hutang_tempo" name="hutang_tempo" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="right"><strong>Jumlah Harta Yang Dihitung Zakatnya</strong></td>
+                                <td align="right"><input type="text" disabled="disabled" class="jumlah_zakat_harta" name="jumlah_zakat_harta" value="0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table cellpadding="10px" width="100%" border="0" class="table table-bordered table-condensed table-hover table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Harga Emas saat ini (dalam gram)</td>
+                                <td width="150px"><input type="text" onchange="formated('harga_emas');" class="harga_emas" name="harga_emas" value="530000"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="right"><strong>Besarnya Nisab Zakat Maal per Tahun</strong></td>
+                                <td><input type="text" disabled="disabled" class="nisab_maal_pertahun" name="nisab_maal_pertahun" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="right"><strong>Apakah Saya Wajib Membayar Zakat Maal ?</strong></td>
+                                <td><input type="text" disabled="disabled" class="wajib_bayar_maal" name="wajib_bayar_maal" value="-"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="right"><strong>Jumlah yang Saya Harus Dibayarkan per Tahun</strong></td>
+                                <td><input type="text" disabled="disabled" class="wajib_bayar_maal_pertahun" name="wajib_bayar_maal_pertahun" value="-"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="right"><strong>Jumlah Bila Saya Bayarkan per Bulan</strong></td>
+                                <td><input type="text" disabled="disabled" class="wajib_bayar_maal_perbulan" name="wajib_bayar_maal_perbulan" value="-"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <table cellpadding="10px" width="100%" border="0" class="table table-bordered table-condensed table-hover table-striped">
+                        <tbody>
+                            <tr>
+                                <td align="right">Zakat Penghasilan per Bulan</td>
+                                <td width="150px"><input type="text" disabled="disabled" class="zakat_perbulan" name="zakat_perbulan" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">Zakat Maal yang dibayarkan per Bulan</td>
+                                <td><input type="text" disabled="disabled" class="zakat_maal_perbulan" name="zakat_maal_perbulan" value="0"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="right"><strong>Total Pembayaran Zakat Saya per Bulan</strong></td>
+                                <td>
+                                <input type="text" value="" disabled="disabled" class="total_zakat_perbulan" name="total_zakat_perbulan">
+                                <input type="hidden" value="0" class="total_zakat_perbulan_ipaymu" name="result_nisab">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="js/kalkulator.js"></script>
+    </body>
+</html>
